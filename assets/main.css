@@ -1,0 +1,49 @@
+html{
+    font-family:sans-serif; 
+}
+.unhighlight{
+    width:70px;
+    height: 70px;
+    top: 50%;
+    padding: 5px; 
+    border: 2px solid #00AAFF;
+    background-color: #DF7B77;
+    text-align: center;    
+    opacity: 0.2;
+    padding: 8px; 
+    border-radius: 8px;    
+    border: 2px solid #37FF00;
+}
+
+#popup{
+    display: none;
+    /* top: 50%; */
+    padding: 5px;
+    background-color: #FFFFFF;
+    width:150px;
+    height: 70px;
+    text-align: center;
+    /* border-radius:8px;   */
+}
+
+.buttons{
+    width: 90px;
+    height: 30px;
+    color: #5533DC;
+    border: 2px solid;
+    border-radius: 3px; 
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.buttons:hover{
+    border: 3px solid #3300FF ;
+    box-shadow: 10px 10px 5px #888888;    
+}
+
+.songcontrolbuttons{
+    width: 50px;
+    height: 25px;
+    color: #252429;
+    border: 2px solid;
+    border-radius: 6px; 
+}
