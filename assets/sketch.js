@@ -61,8 +61,10 @@ function draw(){
   //get the element with id #par and save to the global variable clickable
   clickable = select('#par');
   clickable.position(width/5,height/2);  
-  clickable.mouseOver(highlight); //hover over and style changes
-  clickable.mouseOut(unhighlight); //hover out and style reverts back
+  var Highlight = changeStyle('37FF00','B85DAC','0.8');
+  var Unhighlight = changeStyle('00AAFF','DF7B77','0.2');
+  clickable.mouseOver(Highlight); //hover over and style changes
+  clickable.mouseOut( Unhighlight); //hover out and style reverts back
   clickable.mousePressed(popup);  //upon mouseclick a popup box appears
 }
 
@@ -81,14 +83,13 @@ function popupHide(){
   popbox.style('display:none');
 }
 
-//function to highlight the clickable div upon hover in
-function highlight(){
-  this.style("border:4px solid #37FF00;background-color:#B85DAC;opacity:0.8");
-}
-
-//revert the clickable div back to its style upon hover out
-function unhighlight(){
-  this.style("border:2px solid #00AAFF;background-color:#DF7B77;opacity:0.2");
+//function closure to highlight and unhighlight the clickable div upon hover in and out
+function changeStyle(borderColor, backgroundColor, opacity) {
+  return function() {
+  clickable.style('border', '2px solid #' + borderColor);
+  clickable.style('background-color', '#' + backgroundColor);
+  clickable.style('opacity', opacity);
+  };
 }
 
 //function to show previou image and play a sound
